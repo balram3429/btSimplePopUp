@@ -27,8 +27,9 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
   2. Maken an import statement for the file as `#import "btSimplePopUp.h"` .
   3. Add to your project the `QuartzCore framework` & `Accelerate Framework` & make an import statement for both.
 
-## Initialization (Under Documentation )
+## Initialization 
 
+### Menu Buttons only
  Use the below method to initialize the `btSimplePopUp` menu with just images & callback block operations for each menu.
  
   `-(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;`
@@ -66,6 +67,8 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
 ```
 ##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click on popup item. #####
  
+### Menu Buttons & Text
+
  Use the below method to initialize the `btSimplePopUp` menu with images, titles & callback block operations for each menu.
  
  `-(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;`
@@ -116,18 +119,20 @@ btSimplePopUP *popUp = [[btSimplePopUP alloc]initWithItemImage:@[
 
 ## Properties - Color / Border
 
- PopUPStyle `BTPopUpStyleDefault, BTPopUpStyleMinimalRoundedCorner`
+ PopUPStyle
+ `BTPopUpStyleDefault, BTPopUpStyleMinimalRoundedCorner`
 
 ```Objective-c
     [popUp setPopUpStyle:BTPopUpStyleDefault];
 ```
- PopUpBorderStyle  `BTPopUpBorderStyleDefaultNone, BTPopUpBorderStyleLightContent, BTPopUpBorderStyleDarkContent`
+ PopUpBorderStyle
+ `BTPopUpBorderStyleDefaultNone, BTPopUpBorderStyleLightContent, BTPopUpBorderStyleDarkContent`
 
 ```Objective-c
     [popUp setPopUpBorderStyle:BTPopUpBorderStyleDefaultNone];
 ```
 
- PopUpBackgroundColor - Custom Color as like red, green, etc
+ PopUpBackgroundColor Custom Color
 ```Objective-c
     [popUp setPopUpBackgroundColor:[UIColor colorWithRed:0.8 green:0.2 blue:0.1 alpha:0.7]];
 ```
