@@ -65,7 +65,7 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
                                     [self.view addSubview:popUp];
   
 ```
-##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click on popup item. #####
+##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click of popup item. #####
  
 ### Menu Buttons & Text
 
