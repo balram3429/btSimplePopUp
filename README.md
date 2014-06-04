@@ -5,7 +5,7 @@ This is a simple PopUp menu with custom items having images. Its responds to Tou
 
 <IMG SRC = "https://s3-ap-southeast-1.amazonaws.com/problem-arc/SimplePopUP.gif" alt="btSimplePopUp"> </IMG>
 
-This is a simple popup menu for iOS. Inspipred by iOS7 groupping folder (loook alike) in the springboard. Is is purely based on `UIView`. Includes flats looks, callbacks using blocks & several options for curved corners & flat corners.
+This is a simple popup menu for iOS. Inspipred by iOS7 groupping folder (look alike) in the springboard. It is purely based on `UIView`. Includes flats looks, callbacks using blocks & several options for curved corners & flat corners.
 
 ### Rounded Corners / FlatCorners / BorderColors
 <img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btSimplePopRED.jpg" alt="btSimpleSideMenu Screenshot" width="705" height="396" />
