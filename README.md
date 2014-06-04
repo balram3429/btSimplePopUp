@@ -7,11 +7,11 @@ This is a simple PopUp menu with custom items having images. Its responds to Tou
 
 This is a simple popup menu for iOS. Inspipred by iOS7 groupping folder (loook alike) in the springboard. Is is purely based on `UIView`. Includes flats looks, callbacks using blocks & several options for curved corners & flat corners.
 
-### Rounded Corners - Default Property
-<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenOne.png" alt="btSimpleSideMenu Screenshot" width="320" height="568" /> . <img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenTwo.png" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
+### Rounded Corners / FlatCorners / BorderColors
+<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btSimplePopRED.jpg" alt="btSimpleSideMenu Screenshot" width="705" height="396" />
 
-### Minimal Rounded Corners
-<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenREctanglePopUp.png" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
+### PopMenu Color Variance
+<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btSimplePopBLUE.jpg" alt="btSimpleSideMenu Screenshot" width="705" height="396" />
 
 ## Requirements
 * Xcode 5 or higher
@@ -29,9 +29,109 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
 
 ## Initialization (Under Documentation )
 
+ Use the below method to initialize the `btSimplePopUp` menu with just images & callback block operations for each menu.
+ 
+  `-(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;`
+  
+<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenRCREDbuttonsonly.jpg" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
+  
+  Example :
+  
+```objective-c
+  popUp = [[btSimplePopUP alloc]initWithItemImage:@[
+                                                      [UIImage imageNamed:@"alert.png"],
+                                                      [UIImage imageNamed:@"attach.png"],
+                                                      [UIImage imageNamed:@"cloudUp.png"],
+                                                      [UIImage imageNamed:@"facebook.png"],
+                                                      [UIImage imageNamed:@"camera.png"],
+                                                      [UIImage imageNamed:@"dropBox.png"],
+                                                      [UIImage imageNamed:@"mic.png"],
+                                                      [UIImage imageNamed:@"wi-Fi.png"]
+                                                      ]
+                                                      
+                                     andActionArray:@[
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; }, 
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; },
+                                     ^{ [self showAlert]; }
+                                    ]
+                                    
+                                    addToViewController:self];
+                                    [self.view addSubview:popUp];
+  
+```
+##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click on popup item. #####
+ 
+ Use the below method to initialize the `btSimplePopUp` menu with images, titles & callback block operations for each menu.
+ 
+ `-(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;`
+ 
+   <img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenRCBlue.png" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
+ 
+ Example: 
+ 
 ```objective-c
 
+btSimplePopUP *popUp = [[btSimplePopUP alloc]initWithItemImage:@[
+                                                      [UIImage imageNamed:@"alert.png"],
+                                                      [UIImage imageNamed:@"attach.png"],
+                                                      [UIImage imageNamed:@"cloudUp.png"],
+                                                      [UIImage imageNamed:@"facebook.png"],
+                                                      [UIImage imageNamed:@"camera.png"],
+                                                      [UIImage imageNamed:@"dropBox.png"],
+                                                      [UIImage imageNamed:@"mic.png"],
+                                                      [UIImage imageNamed:@"wi-Fi.png"]
+                                                      ]
+                                                      
+                                      andActionArray:@[
+                                     ^{
+                                     
+                                     __block UIViewController *temp = [[UIViewController alloc]init];
+                                     temp.view.backgroundColor = [UIColor blueColor];
+                                     [self.navigationController presentViewController:temp
+                                                animated:YES
+                                              completion:^{
+                                                  [temp dismissViewControllerAnimated:YES completion:nil];
+                                              }];
+    },
+    ^{ [self showAlert]; }, 
+    ^{ [self showAlert]; },
+    ^{ [self showAlert]; },
+    ^{ [self showAlert]; },
+    ^{ [self showAlert]; },
+    ^{ [self showAlert]; },
+    ^{ [self showAlert]; }
+    ]
+    
+    addToViewController:self];
+    
+    [self.view addSubview:popUp];
 ```
+##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click of popup item. #####
+
+
+## Properties - Color / Border
+
+ PopUPStyle `BTPopUpStyleDefault, BTPopUpStyleMinimalRoundedCorner`
+
+```Objective-c
+    [popUp setPopUpStyle:BTPopUpStyleDefault];
+```
+ PopUpBorderStyle  `BTPopUpBorderStyleDefaultNone, BTPopUpBorderStyleLightContent, BTPopUpBorderStyleDarkContent`
+
+```Objective-c
+    [popUp setPopUpBorderStyle:BTPopUpBorderStyleDefaultNone];
+```
+
+ PopUpBackgroundColor - Custom Color as like red, green, etc
+```Objective-c
+    [popUp setPopUpBackgroundColor:[UIColor colorWithRed:0.8 green:0.2 blue:0.1 alpha:0.7]];
+```
+    
 ## Contact
 
 - tiwari.balram@gmail.com
