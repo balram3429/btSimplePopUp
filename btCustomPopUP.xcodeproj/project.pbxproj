@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EC55D2F193F3190006AE2CC /* author.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D2E193F3190006AE2CC /* author.png */; };
+		4EC55D3F193F319E006AE2CC /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D30193F319E006AE2CC /* alert.png */; };
+		4EC55D40193F319E006AE2CC /* attach.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D31193F319E006AE2CC /* attach.png */; };
+		4EC55D41193F319E006AE2CC /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D32193F319E006AE2CC /* camera.png */; };
+		4EC55D42193F319E006AE2CC /* cloudUp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D33193F319E006AE2CC /* cloudUp.png */; };
+		4EC55D43193F319E006AE2CC /* curved.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D34193F319E006AE2CC /* curved.png */; };
+		4EC55D44193F319E006AE2CC /* dropBox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D35193F319E006AE2CC /* dropBox.png */; };
+		4EC55D45193F319E006AE2CC /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D36193F319E006AE2CC /* facebook.png */; };
+		4EC55D46193F319E006AE2CC /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D37193F319E006AE2CC /* mic.png */; };
+		4EC55D47193F319E006AE2CC /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D38193F319E006AE2CC /* search.png */; };
+		4EC55D48193F319E006AE2CC /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D39193F319E006AE2CC /* settings.png */; };
+		4EC55D49193F319E006AE2CC /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D3A193F319E006AE2CC /* share.png */; };
+		4EC55D4A193F319E006AE2CC /* stacks.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D3B193F319E006AE2CC /* stacks.png */; };
+		4EC55D4B193F319E006AE2CC /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D3C193F319E006AE2CC /* twitter.png */; };
+		4EC55D4C193F319E006AE2CC /* whatsApp.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D3D193F319E006AE2CC /* whatsApp.png */; };
+		4EC55D4D193F319E006AE2CC /* wi-Fi.png in Resources */ = {isa = PBXBuildFile; fileRef = 4EC55D3E193F319E006AE2CC /* wi-Fi.png */; };
+		4ECC36FB193C40D60076CDB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC36FA193C40D60076CDB7 /* Foundation.framework */; };
+		4ECC36FD193C40D60076CDB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC36FC193C40D60076CDB7 /* CoreGraphics.framework */; };
+		4ECC36FF193C40D60076CDB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC36FE193C40D60076CDB7 /* UIKit.framework */; };
+		4ECC3705193C40D60076CDB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC3703193C40D60076CDB7 /* InfoPlist.strings */; };
+		4ECC3707193C40D60076CDB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC3706193C40D60076CDB7 /* main.m */; };
+		4ECC370B193C40D60076CDB7 /* btAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC370A193C40D60076CDB7 /* btAppDelegate.m */; };
+		4ECC370D193C40D60076CDB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC370C193C40D60076CDB7 /* Images.xcassets */; };
+		4ECC3714193C40D60076CDB7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC3713193C40D60076CDB7 /* XCTest.framework */; };
+		4ECC3715193C40D60076CDB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC36FA193C40D60076CDB7 /* Foundation.framework */; };
+		4ECC3716193C40D60076CDB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC36FE193C40D60076CDB7 /* UIKit.framework */; };
+		4ECC371E193C40D60076CDB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ECC371C193C40D60076CDB7 /* InfoPlist.strings */; };
+		4ECC3720193C40D60076CDB7 /* btCustomPopUPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC371F193C40D60076CDB7 /* btCustomPopUPTests.m */; };
+		4ECC372B193C40FC0076CDB7 /* btHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC372A193C40FC0076CDB7 /* btHomeViewController.m */; };
+		4ECC3732193C5DAE0076CDB7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC3731193C5DAE0076CDB7 /* Accelerate.framework */; };
+		4ECC3734193C5DB40076CDB7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECC3733193C5DB40076CDB7 /* QuartzCore.framework */; };
+		4ECC3750193C9F770076CDB7 /* btSimplePopUP.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ECC374F193C9F770076CDB7 /* btSimplePopUP.m */; };
+		BDB4F1DC193F56B900E065B2 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BDB4F1DB193F56B900E065B2 /* background.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4ECC3717193C40D60076CDB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ECC36EF193C40D60076CDB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4ECC36F6193C40D60076CDB7;
+			remoteInfo = btCustomPopUP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4EC55D2E193F3190006AE2CC /* author.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = author.png; sourceTree = "<group>"; };
+		4EC55D30193F319E006AE2CC /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
+		4EC55D31193F319E006AE2CC /* attach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attach.png; sourceTree = "<group>"; };
+		4EC55D32193F319E006AE2CC /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		4EC55D33193F319E006AE2CC /* cloudUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudUp.png; sourceTree = "<group>"; };
+		4EC55D34193F319E006AE2CC /* curved.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = curved.png; sourceTree = "<group>"; };
+		4EC55D35193F319E006AE2CC /* dropBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dropBox.png; sourceTree = "<group>"; };
+		4EC55D36193F319E006AE2CC /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		4EC55D37193F319E006AE2CC /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic.png; sourceTree = "<group>"; };
+		4EC55D38193F319E006AE2CC /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		4EC55D39193F319E006AE2CC /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		4EC55D3A193F319E006AE2CC /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
+		4EC55D3B193F319E006AE2CC /* stacks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stacks.png; sourceTree = "<group>"; };
+		4EC55D3C193F319E006AE2CC /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		4EC55D3D193F319E006AE2CC /* whatsApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whatsApp.png; sourceTree = "<group>"; };
+		4EC55D3E193F319E006AE2CC /* wi-Fi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wi-Fi.png"; sourceTree = "<group>"; };
+		4ECC36F7193C40D60076CDB7 /* btCustomPopUP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = btCustomPopUP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECC36FA193C40D60076CDB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4ECC36FC193C40D60076CDB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4ECC36FE193C40D60076CDB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4ECC3702193C40D60076CDB7 /* btCustomPopUP-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "btCustomPopUP-Info.plist"; sourceTree = "<group>"; };
+		4ECC3704193C40D60076CDB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4ECC3706193C40D60076CDB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4ECC3708193C40D60076CDB7 /* btCustomPopUP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "btCustomPopUP-Prefix.pch"; sourceTree = "<group>"; };
+		4ECC3709193C40D60076CDB7 /* btAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = btAppDelegate.h; sourceTree = "<group>"; };
+		4ECC370A193C40D60076CDB7 /* btAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = btAppDelegate.m; sourceTree = "<group>"; };
+		4ECC370C193C40D60076CDB7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4ECC3712193C40D60076CDB7 /* btCustomPopUPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = btCustomPopUPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ECC3713193C40D60076CDB7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4ECC371B193C40D60076CDB7 /* btCustomPopUPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "btCustomPopUPTests-Info.plist"; sourceTree = "<group>"; };
+		4ECC371D193C40D60076CDB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4ECC371F193C40D60076CDB7 /* btCustomPopUPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = btCustomPopUPTests.m; sourceTree = "<group>"; };
+		4ECC3729193C40FC0076CDB7 /* btHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = btHomeViewController.h; sourceTree = "<group>"; };
+		4ECC372A193C40FC0076CDB7 /* btHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = btHomeViewController.m; sourceTree = "<group>"; };
+		4ECC3731193C5DAE0076CDB7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		4ECC3733193C5DB40076CDB7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4ECC374E193C9F770076CDB7 /* btSimplePopUP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = btSimplePopUP.h; path = btSimplePopUp/btSimplePopUP.h; sourceTree = "<group>"; };
+		4ECC374F193C9F770076CDB7 /* btSimplePopUP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = btSimplePopUP.m; path = btSimplePopUp/btSimplePopUP.m; sourceTree = "<group>"; };
+		BDB4F1DB193F56B900E065B2 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4ECC36F4193C40D60076CDB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC3734193C5DB40076CDB7 /* QuartzCore.framework in Frameworks */,
+				4ECC3732193C5DAE0076CDB7 /* Accelerate.framework in Frameworks */,
+				4ECC36FD193C40D60076CDB7 /* CoreGraphics.framework in Frameworks */,
+				4ECC36FF193C40D60076CDB7 /* UIKit.framework in Frameworks */,
+				4ECC36FB193C40D60076CDB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC370F193C40D60076CDB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC3714193C40D60076CDB7 /* XCTest.framework in Frameworks */,
+				4ECC3716193C40D60076CDB7 /* UIKit.framework in Frameworks */,
+				4ECC3715193C40D60076CDB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4ECC36EE193C40D60076CDB7 = {
+			isa = PBXGroup;
+			children = (
+				BD82B1D0193CB46A0059E0EF /* btSimplePopUp */,
+				4ECC3741193C92DC0076CDB7 /* images */,
+				4ECC3700193C40D60076CDB7 /* btCustomPopUP */,
+				4ECC3719193C40D60076CDB7 /* btCustomPopUPTests */,
+				4ECC36F9193C40D60076CDB7 /* Frameworks */,
+				4ECC36F8193C40D60076CDB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4ECC36F8193C40D60076CDB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC36F7193C40D60076CDB7 /* btCustomPopUP.app */,
+				4ECC3712193C40D60076CDB7 /* btCustomPopUPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4ECC36F9193C40D60076CDB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC3733193C5DB40076CDB7 /* QuartzCore.framework */,
+				4ECC3731193C5DAE0076CDB7 /* Accelerate.framework */,
+				4ECC36FA193C40D60076CDB7 /* Foundation.framework */,
+				4ECC36FC193C40D60076CDB7 /* CoreGraphics.framework */,
+				4ECC36FE193C40D60076CDB7 /* UIKit.framework */,
+				4ECC3713193C40D60076CDB7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4ECC3700193C40D60076CDB7 /* btCustomPopUP */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC3709193C40D60076CDB7 /* btAppDelegate.h */,
+				4ECC370A193C40D60076CDB7 /* btAppDelegate.m */,
+				4ECC370C193C40D60076CDB7 /* Images.xcassets */,
+				4ECC3701193C40D60076CDB7 /* Supporting Files */,
+				4ECC3729193C40FC0076CDB7 /* btHomeViewController.h */,
+				4ECC372A193C40FC0076CDB7 /* btHomeViewController.m */,
+			);
+			path = btCustomPopUP;
+			sourceTree = "<group>";
+		};
+		4ECC3701193C40D60076CDB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC3702193C40D60076CDB7 /* btCustomPopUP-Info.plist */,
+				4ECC3703193C40D60076CDB7 /* InfoPlist.strings */,
+				4ECC3706193C40D60076CDB7 /* main.m */,
+				4ECC3708193C40D60076CDB7 /* btCustomPopUP-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ECC3719193C40D60076CDB7 /* btCustomPopUPTests */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC371F193C40D60076CDB7 /* btCustomPopUPTests.m */,
+				4ECC371A193C40D60076CDB7 /* Supporting Files */,
+			);
+			path = btCustomPopUPTests;
+			sourceTree = "<group>";
+		};
+		4ECC371A193C40D60076CDB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC371B193C40D60076CDB7 /* btCustomPopUPTests-Info.plist */,
+				4ECC371C193C40D60076CDB7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4ECC3741193C92DC0076CDB7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				BDB4F1DB193F56B900E065B2 /* background.jpg */,
+				4EC55D30193F319E006AE2CC /* alert.png */,
+				4EC55D31193F319E006AE2CC /* attach.png */,
+				4EC55D32193F319E006AE2CC /* camera.png */,
+				4EC55D33193F319E006AE2CC /* cloudUp.png */,
+				4EC55D34193F319E006AE2CC /* curved.png */,
+				4EC55D35193F319E006AE2CC /* dropBox.png */,
+				4EC55D36193F319E006AE2CC /* facebook.png */,
+				4EC55D37193F319E006AE2CC /* mic.png */,
+				4EC55D38193F319E006AE2CC /* search.png */,
+				4EC55D39193F319E006AE2CC /* settings.png */,
+				4EC55D3A193F319E006AE2CC /* share.png */,
+				4EC55D3B193F319E006AE2CC /* stacks.png */,
+				4EC55D3C193F319E006AE2CC /* twitter.png */,
+				4EC55D3D193F319E006AE2CC /* whatsApp.png */,
+				4EC55D3E193F319E006AE2CC /* wi-Fi.png */,
+				4EC55D2E193F3190006AE2CC /* author.png */,
+			);
+			name = images;
+			path = btCustomPopUP/images;
+			sourceTree = "<group>";
+		};
+		BD82B1D0193CB46A0059E0EF /* btSimplePopUp */ = {
+			isa = PBXGroup;
+			children = (
+				4ECC374E193C9F770076CDB7 /* btSimplePopUP.h */,
+				4ECC374F193C9F770076CDB7 /* btSimplePopUP.m */,
+			);
+			name = btSimplePopUp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4ECC36F6193C40D60076CDB7 /* btCustomPopUP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECC3723193C40D60076CDB7 /* Build configuration list for PBXNativeTarget "btCustomPopUP" */;
+			buildPhases = (
+				4ECC36F3193C40D60076CDB7 /* Sources */,
+				4ECC36F4193C40D60076CDB7 /* Frameworks */,
+				4ECC36F5193C40D60076CDB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = btCustomPopUP;
+			productName = btCustomPopUP;
+			productReference = 4ECC36F7193C40D60076CDB7 /* btCustomPopUP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4ECC3711193C40D60076CDB7 /* btCustomPopUPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4ECC3726193C40D60076CDB7 /* Build configuration list for PBXNativeTarget "btCustomPopUPTests" */;
+			buildPhases = (
+				4ECC370E193C40D60076CDB7 /* Sources */,
+				4ECC370F193C40D60076CDB7 /* Frameworks */,
+				4ECC3710193C40D60076CDB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4ECC3718193C40D60076CDB7 /* PBXTargetDependency */,
+			);
+			name = btCustomPopUPTests;
+			productName = btCustomPopUPTests;
+			productReference = 4ECC3712193C40D60076CDB7 /* btCustomPopUPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4ECC36EF193C40D60076CDB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = bt;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Balram Tiwari";
+				TargetAttributes = {
+					4ECC3711193C40D60076CDB7 = {
+						TestTargetID = 4ECC36F6193C40D60076CDB7;
+					};
+				};
+			};
+			buildConfigurationList = 4ECC36F2193C40D60076CDB7 /* Build configuration list for PBXProject "btCustomPopUP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4ECC36EE193C40D60076CDB7;
+			productRefGroup = 4ECC36F8193C40D60076CDB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4ECC36F6193C40D60076CDB7 /* btCustomPopUP */,
+				4ECC3711193C40D60076CDB7 /* btCustomPopUPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4ECC36F5193C40D60076CDB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC55D3F193F319E006AE2CC /* alert.png in Resources */,
+				4EC55D41193F319E006AE2CC /* camera.png in Resources */,
+				4EC55D43193F319E006AE2CC /* curved.png in Resources */,
+				4EC55D46193F319E006AE2CC /* mic.png in Resources */,
+				4EC55D45193F319E006AE2CC /* facebook.png in Resources */,
+				4EC55D2F193F3190006AE2CC /* author.png in Resources */,
+				4EC55D4A193F319E006AE2CC /* stacks.png in Resources */,
+				4EC55D44193F319E006AE2CC /* dropBox.png in Resources */,
+				4EC55D49193F319E006AE2CC /* share.png in Resources */,
+				4EC55D4C193F319E006AE2CC /* whatsApp.png in Resources */,
+				4ECC3705193C40D60076CDB7 /* InfoPlist.strings in Resources */,
+				4EC55D4B193F319E006AE2CC /* twitter.png in Resources */,
+				4EC55D48193F319E006AE2CC /* settings.png in Resources */,
+				4EC55D4D193F319E006AE2CC /* wi-Fi.png in Resources */,
+				4EC55D47193F319E006AE2CC /* search.png in Resources */,
+				4ECC370D193C40D60076CDB7 /* Images.xcassets in Resources */,
+				4EC55D40193F319E006AE2CC /* attach.png in Resources */,
+				BDB4F1DC193F56B900E065B2 /* background.jpg in Resources */,
+				4EC55D42193F319E006AE2CC /* cloudUp.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC3710193C40D60076CDB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC371E193C40D60076CDB7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4ECC36F3193C40D60076CDB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC370B193C40D60076CDB7 /* btAppDelegate.m in Sources */,
+				4ECC372B193C40FC0076CDB7 /* btHomeViewController.m in Sources */,
+				4ECC3750193C9F770076CDB7 /* btSimplePopUP.m in Sources */,
+				4ECC3707193C40D60076CDB7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ECC370E193C40D60076CDB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4ECC3720193C40D60076CDB7 /* btCustomPopUPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4ECC3718193C40D60076CDB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4ECC36F6193C40D60076CDB7 /* btCustomPopUP */;
+			targetProxy = 4ECC3717193C40D60076CDB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4ECC3703193C40D60076CDB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECC3704193C40D60076CDB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4ECC371C193C40D60076CDB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4ECC371D193C40D60076CDB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4ECC3721193C40D60076CDB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4ECC3722193C40D60076CDB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4ECC3724193C40D60076CDB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "btCustomPopUP/btCustomPopUP-Prefix.pch";
+				INFOPLIST_FILE = "btCustomPopUP/btCustomPopUP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4ECC3725193C40D60076CDB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "btCustomPopUP/btCustomPopUP-Prefix.pch";
+				INFOPLIST_FILE = "btCustomPopUP/btCustomPopUP-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4ECC3727193C40D60076CDB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/btCustomPopUP.app/btCustomPopUP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "btCustomPopUP/btCustomPopUP-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "btCustomPopUPTests/btCustomPopUPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4ECC3728193C40D60076CDB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/btCustomPopUP.app/btCustomPopUP";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "btCustomPopUP/btCustomPopUP-Prefix.pch";
+				INFOPLIST_FILE = "btCustomPopUPTests/btCustomPopUPTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4ECC36F2193C40D60076CDB7 /* Build configuration list for PBXProject "btCustomPopUP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC3721193C40D60076CDB7 /* Debug */,
+				4ECC3722193C40D60076CDB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECC3723193C40D60076CDB7 /* Build configuration list for PBXNativeTarget "btCustomPopUP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC3724193C40D60076CDB7 /* Debug */,
+				4ECC3725193C40D60076CDB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4ECC3726193C40D60076CDB7 /* Build configuration list for PBXNativeTarget "btCustomPopUPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4ECC3727193C40D60076CDB7 /* Debug */,
+				4ECC3728193C40D60076CDB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4ECC36EF193C40D60076CDB7 /* Project object */;
+}
