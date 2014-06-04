@@ -33,7 +33,7 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
  
   `-(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;`
   
-<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenRCREDbuttonsonly.jpg" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
+<img src="https://raw.githubusercontent.com/balram3429/btSimplePopUp/master/raw/btScreenRCREDbuttonsonly.png" alt="btSimpleSideMenu Screenshot" width="320" height="568" />
   
   Example :
   
