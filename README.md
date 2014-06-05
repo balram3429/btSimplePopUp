@@ -1,5 +1,5 @@
-btSimplePopUp
-=============
+btSimplePopUp (a popup menu)
+============================
 
 This is a simple PopUp menu with custom items having images. Its responds to Touch &amp; gives a iOS7 feel.
 
