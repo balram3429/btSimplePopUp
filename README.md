@@ -1,6 +1,5 @@
-btSimplePopUp (a popup menu)
+btSimplePopUp-Menu
 ============================
-
 This is a simple PopUp menu with custom items having images. Its responds to Touch &amp; gives a iOS7 feel.
 
 <IMG SRC ="https://s3-ap-southeast-1.amazonaws.com/problem-arc/SimplePopUP.gif" alt="btSimplePopUpMenu"> </IMG>
