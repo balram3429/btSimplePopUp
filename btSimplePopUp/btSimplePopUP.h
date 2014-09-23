@@ -15,6 +15,11 @@ typedef NS_ENUM(NSInteger, BTPopUpStyle) {
     BTPopUpStyleMinimalRoundedCorner
 };
 
+typedef NS_ENUM(NSInteger, BTPopUpAnimation) {
+    BTPopUPAnimateWithFade,
+    BTPopUPAnimateNone
+};
+
 typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
     BTPopUpBorderStyleDefaultNone,
     BTPopUpBorderStyleLightContent,
@@ -34,6 +39,7 @@ typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
 @property (nonatomic, assign) BTPopUpStyle popUpStyle;
 @property (nonatomic, assign) BTPopUpBorderStyle popUpBorderStyle;
 @property (nonatomic, assign) UIColor *popUpBackgroundColor;
+@property (nonatomic, assign) BTPopUpAnimation animationStyle;
 
 @property (nonatomic) BOOL setShowRipples;
 
@@ -41,7 +47,7 @@ typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
 -(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;
 
 -(void)setPopUpBackgroundColor:(UIColor *)popUpBackgroundColor;
--(void)show;
+-(void)show:(BTPopUpAnimation)animation;
 -(void)dismiss;
 @end
 

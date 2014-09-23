@@ -475,25 +475,59 @@ typedef void (^completion)(BOOL success);
     }
 }
 
--(void)show {
-    [UIView animateWithDuration:0.15 animations:^{
-        self.alpha = 1;
-        backGroundBlurr.alpha = 1;
-        contentView.center = CGPointMake(self.center.x, self.center.y-15);
-    }completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.002 animations:^{
-            contentView.center = self.center;
-        }];
-    }];
+-(void)show:(BTPopUpAnimation)animation {
+    _animationStyle = animation;
+    if(_animationStyle == BTPopUPAnimateWithFade) {
+        // fade in animation
+        contentView.center = self.center;
+        [UIView animateWithDuration:0.6
+                         animations:^{
+                             self.alpha = 1;
+                             backGroundBlurr.alpha = 1;
+                         } completion:nil];
+    }else {
+        
+        // pop in animation
+        [UIView animateWithDuration:0.7
+                              delay:0
+             usingSpringWithDamping:0.6
+              initialSpringVelocity:0.8
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             self.alpha = 1;
+                             backGroundBlurr.alpha = 1;
+                             contentView.center = self.center;
+                         } completion:nil];
+    }
+    
 }
 
--(void)dismiss {
-    [UIView animateWithDuration:0.1 animations:^{
-        contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
-        backGroundBlurr.alpha = 0;
-    }completion:^(BOOL finished) {
-        self.alpha = 0;
-    }];
+-(void)dismiss{
+    
+    if(_animationStyle == BTPopUPAnimateWithFade) {
+        // fade out animation
+        [UIView animateWithDuration:0.6
+                         animations:^{
+                             self.alpha = 0;
+                             backGroundBlurr.alpha = 0;
+                         } completion:^(BOOL finished) {
+                             contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                         }];
+    }else {
+        
+        // pop out animation
+        [UIView animateWithDuration:0.5
+                              delay:0
+             usingSpringWithDamping:0.5
+              initialSpringVelocity:0.5
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                             backGroundBlurr.alpha = 0;
+                             self.alpha = 0;
+                         } completion:nil];
+    }
+    
 }
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -509,26 +543,11 @@ typedef void (^completion)(BOOL success);
 @implementation UIView (bt_screenshot)
 -(UIImage *)screenshot
 {
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height), NO, [UIScreen mainScreen].scale);
-    
-    if ([self respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
-        
-        NSInvocation* invoc = [NSInvocation invocationWithMethodSignature:
-                               [self methodSignatureForSelector:
-                                @selector(drawViewHierarchyInRect:afterScreenUpdates:)]];
-        [invoc setTarget:self];
-        [invoc setSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)];
-        CGRect arg2 = self.bounds;
-        BOOL arg3 = YES;
-        [invoc setArgument:&arg2 atIndex:2];
-        [invoc setArgument:&arg3 atIndex:3];
-        [invoc invoke];
-    } else {
-        [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    }
-    
+    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 1);
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    
     return image;
 }
 

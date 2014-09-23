@@ -156,7 +156,7 @@
     [alert show];
 }
 -(void)showPopUP:(id)sender {
-    [popUp show];
+    [popUp show:BTPopUPAnimateNone];
 }
 
 - (void)didReceiveMemoryWarning
