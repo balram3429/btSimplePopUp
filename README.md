@@ -68,8 +68,11 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
 
 ### Show PopUp with Animation
  1. Show popUp with default animation, (slide in from bottom)
+ 
  `[popUp show:BTPopUPAnimateNone];`
+
  2. Show with fade animation.
+
  `[popUp show:BTPopUPAnimateWithFade];`
  
 ### Menu Buttons & Text
