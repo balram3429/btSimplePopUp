@@ -10,29 +10,29 @@
 	<string>btCustomPopUP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>3CBD0D4B-15E6-4CC8-B445-6501ABB44F2E</key>
+		<key>A862FB6C0CDB7E891A405C771FEE7A605E558B42</key>
 		<string>https://github.com/balram3429/btSimplePopUp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>btCustomPopUP.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>3CBD0D4B-15E6-4CC8-B445-6501ABB44F2E</key>
+		<key>A862FB6C0CDB7E891A405C771FEE7A605E558B42</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/balram3429/btSimplePopUp.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>3CBD0D4B-15E6-4CC8-B445-6501ABB44F2E</string>
+	<string>A862FB6C0CDB7E891A405C771FEE7A605E558B42</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3CBD0D4B-15E6-4CC8-B445-6501ABB44F2E</string>
+			<string>A862FB6C0CDB7E891A405C771FEE7A605E558B42</string>
 			<key>IDESourceControlWCCName</key>
 			<string>btSimplePopUp</string>
 		</dict>
