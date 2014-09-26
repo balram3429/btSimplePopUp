@@ -2,7 +2,9 @@ btSimplePopUp-Menu
 ============================
 This is a simple PopUp menu with custom items having images. Its responds to Touch &amp; gives a iOS7 feel.
 
-<IMG SRC ="https://s3-ap-southeast-1.amazonaws.com/problem-arc/SimplePopUP.gif" alt="btSimplePopUpMenu"> </IMG>
+<IMG SRC ="https://s3-ap-southeast-1.amazonaws.com/problem-arc/PopUp+SlideIN.gif" alt="btSimplePopUpMenu Slide In"> </IMG>
+
+<IMG SRC ="https://s3-ap-southeast-1.amazonaws.com/problem-arc/PopUp-FadeIn.gif" alt="btSimplePopUpMenu Fade In"> </IMG>
 
 This is a simple popup menu for iOS. Inspipred by iOS7 groupping folder (look alike) in the springboard. It is purely based on `UIView`. Includes flats looks, callbacks using blocks & several options for curved corners & flat corners.
 
