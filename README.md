@@ -65,6 +65,12 @@ Build and run the `btCustomPopUP.xcodeproj` project in Xcode to see `btSimplePop
   
 ```
 ##### Don't forget to define your own method to perform some action. The ` [self showAlert];` is a kind of operation (passed in a block), to be performed on click of popup item. #####
+
+### Show PopUp with Animation
+ 1. Show popUp with default animation, (slide in from bottom)
+ `[popUp show:BTPopUPAnimateNone];`
+ 2. Show with fade animation.
+ `[popUp show:BTPopUPAnimateWithFade];`
  
 ### Menu Buttons & Text
 
