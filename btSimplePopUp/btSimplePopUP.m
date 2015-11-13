@@ -33,7 +33,6 @@ typedef void (^completion)(BOOL success);
 #pragma mark - @implementation
 @implementation BTPopUpItemView
 
-
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -48,7 +47,10 @@ typedef void (^completion)(BOOL success);
     if ((self = [super init])) {
         _title = [title copy];
         _imageView = [[UIImageView alloc]initWithImage:image];
-        _action = [action copy];
+        if(action)
+            _action = [action copy];
+        else
+            _action = nil;
     }
     
     return self;
@@ -99,7 +101,9 @@ typedef void (^completion)(BOOL success);
 }
 
 @property (nonatomic, copy) completion block;
+@property (nonatomic, assign) NSInteger index;
 
+-(void)setRippleButtonIndex:(NSInteger )index;
 -(instancetype)initWithImage:(UIImage *)image andFrame:(CGRect)frame andTarget:(SEL)action andID:(id)sender;
 
 -(instancetype)initWithImage:(UIImage *)image andFrame:(CGRect)frame onCompletion:(completion)completionBlock;
@@ -187,6 +191,9 @@ typedef void (^completion)(BOOL success);
     return self;
 }
 
+-(void)setRippleButtonIndex:(NSInteger )index {
+    _index = index;
+}
 
 -(void)setRippleEffectWithColor:(UIColor *)color {
     rippleColor = color;
@@ -248,6 +255,8 @@ typedef void (^completion)(BOOL success);
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"BT_POP_UP_ITEM_PRESSED" object:nil];
                 BOOL success= YES;
                 _block(success);
+            }else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"BT_POP_UP_ITEM_PRESSED" object:self];
             }
         }];
         
@@ -277,6 +286,11 @@ typedef void (^completion)(BOOL success);
     return self;
 }
 
+-(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray addToViewController:(UIViewController*)sender {
+    
+    return [self initWithItemImage:items andTitles:titleArray andActionArray:nil addToViewController:sender];
+}
+
 -(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController *)sender  {
     return [self initWithItemImage:items andTitles:nil andActionArray:actionArray addToViewController:sender];
 }
@@ -285,7 +299,7 @@ typedef void (^completion)(BOOL success);
     self = [super init];
     if (self) {
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss) name:@"BT_POP_UP_ITEM_PRESSED" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismiss:) name:@"BT_POP_UP_ITEM_PRESSED" object:nil];
         // initialize with the blur effect as background
         CGRect screenSize = [UIScreen mainScreen].bounds;
         self.frame = CGRectMake(0, 0, screenSize.size.width, screenSize.size.height);
@@ -296,7 +310,7 @@ typedef void (^completion)(BOOL success);
         backGroundBlurr.alpha = 0;
         [self addSubview:backGroundBlurr];
         
-        UITapGestureRecognizer *tapOnBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismiss)];
+        UITapGestureRecognizer *tapOnBackground = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissOnTap)];
         tapOnBackground.numberOfTapsRequired = 1;
         [backGroundBlurr addGestureRecognizer:tapOnBackground];
         [backGroundBlurr setUserInteractionEnabled:YES];
@@ -334,10 +348,10 @@ typedef void (^completion)(BOOL success);
                 [itemArray addObject:item];
                 index++;
             }
-        }else if([items count] == [actionArray count]){
+        }else if(![actionArray count]){
             int index = 0;
             for (UIImage *image in items) {
-                BTPopUpItemView *item = [[BTPopUpItemView alloc] initWithImage:image title:nil action:[actionArray objectAtIndex:index]];
+                BTPopUpItemView *item = [[BTPopUpItemView alloc] initWithImage:image title:[titleArray objectAtIndex:index]  action:nil];
                 [itemArray addObject:item];
                 index++;
             }
@@ -384,7 +398,7 @@ typedef void (^completion)(BOOL success);
             BTPopUpItemView *item = [popItems objectAtIndex:counter];
             if(count < 9){
                 if(count < 3){
-                    [self addButton:item xAxis:xAxis yAxis:yAxis];
+                    [self addButton:item xAxis:xAxis yAxis:yAxis index:counter];
                     xAxis += itemSize.width + xFactor;
                     
                     if(count == 2){
@@ -394,7 +408,7 @@ typedef void (^completion)(BOOL success);
                 }
                 
                 if(count > 2 && count < 6){
-                    [self addButton:item xAxis:xAxis yAxis:yAxis];
+                    [self addButton:item xAxis:xAxis yAxis:yAxis index:counter];
                     xAxis += itemSize.width+ xFactor;
                     
                     if(count == 5){
@@ -404,7 +418,7 @@ typedef void (^completion)(BOOL success);
                 }
                 
                 if(count > 5 && count < 9){
-                    [self addButton:item xAxis:xAxis yAxis:yAxis];
+                    [self addButton:item xAxis:xAxis yAxis:yAxis index:counter];
                     xAxis += itemSize.width+ xFactor;
                     
                     if(count == 8){
@@ -424,9 +438,10 @@ typedef void (^completion)(BOOL success);
 }
 
 
--(void)addButton:(BTPopUpItemView*) item xAxis:(CGFloat)x yAxis:(CGFloat)y {
+-(void)addButton:(BTPopUpItemView*) item xAxis:(CGFloat)x yAxis:(CGFloat)y index:(NSInteger)index {
     btRippleButtton *button = [[btRippleButtton alloc]initWithImage:item.imageView.image andTitle:item.title andFrame:CGRectMake(x, y, itemSize.width, itemSize.height) onCompletion:[item.action copy]];
     [button setRippeEffect:YES];
+    [button setRippleButtonIndex:index];
     [scrollView addSubview:button];
 }
 
@@ -502,32 +517,71 @@ typedef void (^completion)(BOOL success);
     
 }
 
--(void)dismiss{
-    
-    if(_animationStyle == BTPopUPAnimateWithFade) {
-        // fade out animation
-        [UIView animateWithDuration:0.6
-                         animations:^{
-                             self.alpha = 0;
-                             backGroundBlurr.alpha = 0;
-                         } completion:^(BOOL finished) {
-                             contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
-                         }];
-    }else {
+-(void)dismissOnTap{
+    [self dismiss:nil];
+}
+-(void)dismiss:(NSNotification *)message{
+    if([message object]){
+        btRippleButtton *rippleButton = (btRippleButtton *)[message object];
+        if(_animationStyle == BTPopUPAnimateWithFade) {
+            // fade out animation
+            [UIView animateWithDuration:0.6
+                             animations:^{
+                                 self.alpha = 0;
+                                 backGroundBlurr.alpha = 0;
+                             } completion:^(BOOL finished) {
+                                 
+                                 if([self.delegate respondsToSelector:@selector(btSimplePopUP:didSelectItemAtIndex:)]){
+                                     [self.delegate btSimplePopUP:self didSelectItemAtIndex:rippleButton.index];
+                                 }
+                                 contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                             }];
+        }else {
+            
+            // pop out animation
+            [UIView animateWithDuration:0.2
+                                  delay:0
+                 usingSpringWithDamping:0.5
+                  initialSpringVelocity:0.5
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                                 backGroundBlurr.alpha = 0;
+                                 self.alpha = 0;
+                             } completion:^(BOOL finished){
+                                 if([self.delegate respondsToSelector:@selector(btSimplePopUP:didSelectItemAtIndex:)]){
+                                     [self.delegate btSimplePopUP:self didSelectItemAtIndex:rippleButton.index];
+                                 }
+                                 
+                             }];
+        }
         
-        // pop out animation
-        [UIView animateWithDuration:0.5
-                              delay:0
-             usingSpringWithDamping:0.5
-              initialSpringVelocity:0.5
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-                             contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
-                             backGroundBlurr.alpha = 0;
-                             self.alpha = 0;
-                         } completion:nil];
+    }else {
+        if(_animationStyle == BTPopUPAnimateWithFade) {
+            // fade out animation
+            [UIView animateWithDuration:0.6
+                             animations:^{
+                                 self.alpha = 0;
+                                 backGroundBlurr.alpha = 0;
+                             } completion:^(BOOL finished) {
+                                 contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                             }];
+        }else {
+            
+            // pop out animation
+            [UIView animateWithDuration:0.5
+                                  delay:0
+                 usingSpringWithDamping:0.5
+                  initialSpringVelocity:0.5
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                                 contentView.frame = CGRectMake(self.frame.size.width/2-150, SCREEN_SIZE.size.height, POPUP_WIDTH, POP_HEIGHT);
+                                 backGroundBlurr.alpha = 0;
+                                 self.alpha = 0;
+                             } completion:nil];
+        }
+        
     }
-    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

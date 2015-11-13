@@ -12,12 +12,12 @@
 #import "btHomeViewController.h"
 #import "btSimplePopUP.h"
 
-@interface btHomeViewController ()
-@property(nonatomic, retain) btSimplePopUP *popUp;
+@interface btHomeViewController ()<btSimplePopUpDelegate>
+@property(nonatomic, retain) btSimplePopUP *popUp, *popUpWithDelegate;
 @end
 
 @implementation btHomeViewController
-@synthesize popUp;
+@synthesize popUp, popUpWithDelegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,15 +57,50 @@
     author.layer.cornerRadius =  author.frame.size.width/2;
 
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(10, 70, 200, 40);
-    button.center = self.view.center;
+    button.frame = CGRectMake(self.view.bounds.size.width/2-100, 130, 200, 40);
     [button setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-    [button.titleLabel setFont:[UIFont fontWithName:@"DIN Condensed" size:65]];
-    [button setTitle:@"PopUp" forState:UIControlStateNormal];
-    
+    [button.titleLabel setFont:[UIFont fontWithName:@"DIN Condensed" size:28]];
+    [button setTitle:@"PopUp Block Based" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(showPopUP:) forControlEvents:UIControlEventTouchUpInside];
     [scrollview addSubview:button];
+
+    UIButton *buttonDelegate = [UIButton buttonWithType:UIButtonTypeCustom];
+    buttonDelegate.frame = CGRectMake(self.view.bounds.size.width/2-100, 250, 200, 40);
+    [buttonDelegate setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
+    [buttonDelegate.titleLabel setFont:[UIFont fontWithName:@"DIN Condensed" size:36]];
+    [buttonDelegate setTitle:@"PopUp Delegate" forState:UIControlStateNormal];
+    [buttonDelegate addTarget:self action:@selector(showPopUpWithDelegate:) forControlEvents:UIControlEventTouchUpInside];
+    [scrollview addSubview:buttonDelegate];
+
+    popUpWithDelegate = [[btSimplePopUP alloc]initWithItemImage:@[
+                                                      [UIImage imageNamed:@"alert.png"],
+                                                      [UIImage imageNamed:@"attach.png"],
+                                                      [UIImage imageNamed:@"cloudUp.png"],
+                                                      [UIImage imageNamed:@"facebook.png"],
+                                                      [UIImage imageNamed:@"camera.png"],
+                                                      [UIImage imageNamed:@"dropBox.png"],
+                                                      [UIImage imageNamed:@"mic.png"],
+                                                      [UIImage imageNamed:@"wi-Fi.png"],
+                                                      [UIImage imageNamed:@"curved.png"],
+                                                      [UIImage imageNamed:@"stacks.png"],
+                                                      [UIImage imageNamed:@"share.png"],
+                                                      [UIImage imageNamed:@"twitter.png"],
+                                                      [UIImage imageNamed:@"search.png"],
+                                                      [UIImage imageNamed:@"whatsApp.png"],
+                                                      [UIImage imageNamed:@"settings.png"],
+                                                      ]
+                                          andTitles:    @[
+                                                          @"Alert", @"Attach",@"Upload", @"Facebook", @"Camera", @"Dropbox",
+                                                          @"Recording", @"Wi-Fi", @"Icon", @"Stacks", @"Share", @"Twitter", @"Search", @"WhatsApp", @"Settings"
+                                                          ]
+             
+                                     andActionArray:nil addToViewController:self];
+    popUpWithDelegate.delegate = self;
     
+    [self.view addSubview:popUpWithDelegate];
+    [popUpWithDelegate setPopUpStyle:BTPopUpStyleDefault];
+    [popUpWithDelegate setPopUpBorderStyle:BTPopUpBorderStyleDefaultNone];
+
     popUp = [[btSimplePopUP alloc]initWithItemImage:@[
                                                       [UIImage imageNamed:@"alert.png"],
                                                       [UIImage imageNamed:@"attach.png"],
@@ -159,6 +194,10 @@
     [popUp show:BTPopUPAnimateNone];
 }
 
+-(void)showPopUpWithDelegate:(id)sender{
+    [popUpWithDelegate show:BTPopUPAnimateNone];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -175,5 +214,13 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+#pragma -mark delegate btSimplePopUp
+
+-(void)btSimplePopUP:(btSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"PopItem" message:[NSString stringWithFormat:@"iAM from Delegate. My Index is %ld", (long)index] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+    [alert show];
+}
 
 @end

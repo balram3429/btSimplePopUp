@@ -26,6 +26,16 @@ typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
     BTPopUpBorderStyleDarkContent
 };
 
+
+@class btSimplePopUP;
+
+@protocol btSimplePopUpDelegate <NSObject>
+
+@optional
+-(void)btSimplePopUP:(btSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index;
+
+@end
+
 @interface btSimplePopUP : UIView <UIScrollViewDelegate>{
     UIImageView *backGroundBlurr;
     UIView *contentView;
@@ -40,11 +50,13 @@ typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
 @property (nonatomic, assign) BTPopUpBorderStyle popUpBorderStyle;
 @property (nonatomic, assign) UIColor *popUpBackgroundColor;
 @property (nonatomic, assign) BTPopUpAnimation animationStyle;
-
+@property(nonatomic, weak) id <btSimplePopUpDelegate> delegate;
 @property (nonatomic) BOOL setShowRipples;
 
 -(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;
 -(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;
+
+-(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray addToViewController:(UIViewController*)sender;
 
 -(void)setPopUpBackgroundColor:(UIColor *)popUpBackgroundColor;
 -(void)show:(BTPopUpAnimation)animation;
