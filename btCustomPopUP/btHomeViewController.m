@@ -12,8 +12,8 @@
 #import "btHomeViewController.h"
 #import "btSimplePopUP.h"
 
-@interface btHomeViewController ()<btSimplePopUpDelegate>
-@property(nonatomic, retain) btSimplePopUP *popUp, *popUpWithDelegate;
+@interface btHomeViewController ()<BTSimplePopUPDelegate>
+@property(nonatomic, retain) BTSimplePopUP *popUp, *popUpWithDelegate;
 @end
 
 @implementation btHomeViewController
@@ -72,7 +72,7 @@
     [buttonDelegate addTarget:self action:@selector(showPopUpWithDelegate:) forControlEvents:UIControlEventTouchUpInside];
     [scrollview addSubview:buttonDelegate];
 
-    popUpWithDelegate = [[btSimplePopUP alloc]initWithItemImage:@[
+    popUpWithDelegate = [[BTSimplePopUP alloc]initWithItemImage:@[
                                                       [UIImage imageNamed:@"alert.png"],
                                                       [UIImage imageNamed:@"attach.png"],
                                                       [UIImage imageNamed:@"cloudUp.png"],
@@ -98,10 +98,10 @@
     popUpWithDelegate.delegate = self;
     
     [self.view addSubview:popUpWithDelegate];
-    [popUpWithDelegate setPopUpStyle:BTPopUpStyleDefault];
-    [popUpWithDelegate setPopUpBorderStyle:BTPopUpBorderStyleDefaultNone];
+    [popUpWithDelegate setPopUpStyle:BTPopUPStyleDefault];
+    [popUpWithDelegate setPopUpBorderStyle:BTPopUPBorderStyleDefaultNone];
 
-    popUp = [[btSimplePopUP alloc]initWithItemImage:@[
+    popUp = [[BTSimplePopUP alloc]initWithItemImage:@[
                                                       [UIImage imageNamed:@"alert.png"],
                                                       [UIImage imageNamed:@"attach.png"],
                                                       [UIImage imageNamed:@"cloudUp.png"],
@@ -180,8 +180,8 @@
                                 addToViewController:self];
     
     [self.view addSubview:popUp];
-    [popUp setPopUpStyle:BTPopUpStyleDefault];
-    [popUp setPopUpBorderStyle:BTPopUpBorderStyleDefaultNone];
+    [popUp setPopUpStyle:BTPopUPStyleDefault];
+    [popUp setPopUpBorderStyle:BTPopUPBorderStyleDefaultNone];
 //    [popUp setPopUpBackgroundColor:[UIColor colorWithRed:0.1 green:0.2 blue:0.6 alpha:0.7]];
 
 }
@@ -218,7 +218,7 @@
 
 #pragma -mark delegate btSimplePopUp
 
--(void)btSimplePopUP:(btSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index{
+-(void)btSimplePopUP:(BTSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index{
     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"PopItem" message:[NSString stringWithFormat:@"iAM from Delegate. My Index is %ld", (long)index] delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
     [alert show];
 }
