@@ -10,47 +10,47 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Accelerate/Accelerate.h>
 
-typedef NS_ENUM(NSInteger, BTPopUpStyle) {
-    BTPopUpStyleDefault,
-    BTPopUpStyleMinimalRoundedCorner
+typedef NS_ENUM(NSInteger, BTPopUPStyle) {
+   BTPopUPStyleDefault,
+   BTPopUPStyleMinimalRoundedCorner
 };
 
-typedef NS_ENUM(NSInteger, BTPopUpAnimation) {
-    BTPopUPAnimateWithFade,
-    BTPopUPAnimateNone
+typedef NS_ENUM(NSInteger, BTPopUPAnimation) {
+   BTPopUPAnimateWithFade,
+   BTPopUPAnimateNone
 };
 
-typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
-    BTPopUpBorderStyleDefaultNone,
-    BTPopUpBorderStyleLightContent,
-    BTPopUpBorderStyleDarkContent
+typedef NS_ENUM(NSInteger, BTPopUPBorderStyle) {
+   BTPopUPBorderStyleDefaultNone,
+   BTPopUPBorderStyleLightContent,
+   BTPopUPBorderStyleDarkContent
 };
 
 
-@class btSimplePopUP;
+@class BTSimplePopUP;
 
-@protocol btSimplePopUpDelegate <NSObject>
+@protocol BTSimplePopUPDelegate <NSObject>
 
 @optional
--(void)btSimplePopUP:(btSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index;
+-(void)btSimplePopUP:(BTSimplePopUP *)popUp didSelectItemAtIndex:(NSInteger)index;
 
 @end
 
-@interface btSimplePopUP : UIView <UIScrollViewDelegate>{
-    UIImageView *backGroundBlurr;
-    UIView *contentView;
-    CGSize itemSize;
-    UIColor *itemColor, *itemTextColor, *highlightColor, *backgroundColor;
-    UIFont *itemFont;
-    NSArray *popItems;
-    UIScrollView *scrollView;
-    UIPageControl * pageControl;
+@interface BTSimplePopUP : UIView <UIScrollViewDelegate>{
+   UIImageView *backGroundBlurr;
+   UIView *contentView;
+   CGSize itemSize;
+   UIColor *itemColor, *itemTextColor, *highlightColor, *backgroundColor;
+   UIFont *itemFont;
+   NSArray *popItems;
+   UIScrollView *scrollView;
+   UIPageControl * pageControl;
 }
-@property (nonatomic, assign) BTPopUpStyle popUpStyle;
-@property (nonatomic, assign) BTPopUpBorderStyle popUpBorderStyle;
+@property (nonatomic, assign) BTPopUPStyle popUpStyle;
+@property (nonatomic, assign) BTPopUPBorderStyle popUpBorderStyle;
 @property (nonatomic, assign) UIColor *popUpBackgroundColor;
-@property (nonatomic, assign) BTPopUpAnimation animationStyle;
-@property(nonatomic, weak) id <btSimplePopUpDelegate> delegate;
+@property (nonatomic, assign) BTPopUPAnimation animationStyle;
+@property(nonatomic, weak) id <BTSimplePopUPDelegate> delegate;
 @property (nonatomic) BOOL setShowRipples;
 
 -(instancetype)initWithItemImage:(NSArray *)items andActionArray:(NSArray *)actionArray addToViewController:(UIViewController*)sender;
@@ -58,9 +58,9 @@ typedef NS_ENUM(NSInteger, BTPopUpBorderStyle) {
 
 -(instancetype)initWithItemImage:(NSArray *)items andTitles:(NSArray *)titleArray addToViewController:(UIViewController*)sender;
 
--(void)setPopUpBackgroundColor:(UIColor *)popUpBackgroundColor;
--(void)show:(BTPopUpAnimation)animation;
--(void)dismiss;
+-(void)setPopUPBackgroundColor:(UIColor *)popUpBackgroundColor;
+-(void)show:(BTPopUPAnimation)animation;
+
 @end
 
 
