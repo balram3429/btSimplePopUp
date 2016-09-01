@@ -72,8 +72,9 @@ typedef void (^completion)(BOOL success);
       return NO;
    }
    
+   UIImage *uiImage = [[UIImage alloc] initWithCIImage:object];
    return ((self.title == [object title] || [self.title isEqualToString:[object title]]) &&
-           (self.image == [object image]));
+           (self.image == uiImage));
 }
 
 - (NSUInteger)hash {
